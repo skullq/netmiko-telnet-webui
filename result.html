@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco Command Executor</title>
+</head>
+<body>
+    <h1>Cisco Command Executor</h1>
+    <form method="POST">
+        <label for="ip_address">Enter Cisco IP address:</label>
+        <input type="text" id="ip_address" name="ip_address" required>
+	<br>
+        <label for="command">Enter Cisco command:</label>
+        <input type="text" id="command" name="command" required>
+	<button type="submit">Execute</button>
+        <br>
+    </form>
+    {% if output %}
+        <h2>Command Output:</h2>
+        <pre>{{ output }}</pre>
+    {% endif %}
+</body>
+</html>
+root@pnetlab:~/netmiko-telnet-webui/templates# cat result.html 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cisco Command Result</title>
+</head>
+<body>
+    <h1>Cisco Command Result</h1>
+    {% if output %}
+        <h2>Command Output:</h2>
+        <pre>{{ output }}</pre>
+    {% else %}
+        <p>No output available.</p>
+    {% endif %}
+</body>
+</html>
