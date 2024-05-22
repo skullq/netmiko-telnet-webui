@@ -3,6 +3,7 @@ pip3 install netmiko
 pip3 install flask
 
 mkdir templates
+
 mv *.html templates
 
 python3 ios_telnet_get.py 
